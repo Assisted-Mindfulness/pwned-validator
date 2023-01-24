@@ -66,7 +66,7 @@ If we wanted to block `password` but not `P@ssword!`, we can specify the minimum
 or using the Rule object:
 
 ```php
-'password' => ['required', 'string', 'min:6', new \Valorin\Pwned\PwnedRule(150), 'confirmed'],
+'password' => ['required', 'string', 'min:6', new \AssistedMindfulness\Pwned\PwnedRule(150), 'confirmed'],
 ```
 
 
