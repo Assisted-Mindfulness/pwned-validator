@@ -11,23 +11,19 @@ If the password has been pwned, it will fail validation, preventing the user fro
 
 Install the package using Composer:
 
-```
+```bash
 composer require assisted-mindfulness/pwned-validator/pwned-validator
 ```
 
-Laravel's service provider discovery will automatically configure the Pwned service provider for you.
+Add the validation message to your validation lang file  `lang/en/validation.php` :
 
-Add the validation message to your validation lang file:
-
-For each language add a validation message to `validation.php` like below
-
-```
+```php
 'pwned' => 'The :attribute is not secure enough',
 ```
 
 or use `:min` in the message to indicate the minimum number of times found set on the validator:
 
-```
+```php
 'pwned' => 'Your password is insufficiently secure as it has been found at least :min times in known password breaches, please choose a new one.',
 ```
 
@@ -45,7 +41,7 @@ return Validator::make($data, [
 
 ## Using the Rule Object
 
-Alternatively, you can use the `AssistedMindfulness\Pwned\Pwned` [Validation Rule Object](https://laravel.com/docs/validation#using-rule-objects)
+Alternatively, you can use the `AssistedMindfulness\Pwned\PwnedRule` [Validation Rule Object](https://laravel.com/docs/validation#using-rule-objects)
 instead of the `pwned` alias if you prefer:
 
 ```php
@@ -55,21 +51,6 @@ return Validator::make($data, [
     'password' => ['required', 'string', 'min:6', new \AssistedMindfulness\Pwned\PwnedRule, 'confirmed'],
 ]);
 ```
-
-## Validation message
-
-You will need to assign your own validation message within the `resources/lang/*/validation.php` file(s).
-Both the Rule object and the `pwned` validator alias refer to the validation string `validation.pwned`.
-
-I haven't set a default language string as it is important you get the language right for your intended users. 
-In some systems a message like `Your password has been pwned! Please use a new one!` is suitable, while in other systems
-you'd be better with something a lot longer:
- 
-> Your password is insufficiently secure as it has been found in known password breaches, please choose a new one. [Need help?](#)
-
-Thanks to [kanalumaddela](https://github.com/valorin/pwned-validator/pull/2), you can use `:min` in the message to indicate the minimum number of times found set on the validator.
-
-> Your password is insufficiently secure as it has been found at least :min times in known password breaches, please choose a new one.
 
 ## Limiting by the number of times the password was pwned
 
