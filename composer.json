@@ -1,5 +1,5 @@
 {
-    "name": "valorin/pwned-validator",
+    "name": "assisted-mindfulness/pwned-validator",
     "description": "Super simple Laravel Validator for checking password via the Pwned Passwords service of Have I Been Pwned",
     "type": "library",
     "license": "MIT",
@@ -11,18 +11,30 @@
     ],
     "autoload": {
         "psr-4": {
-            "Valorin\\Pwned\\": "src/"
+            "AssistedMindfulness\\Pwned\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AssistedMindfulness\\Pwned\\Tests\\": "tests/"
         }
     },
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.4",
         "ext-curl": "*",
-        "illuminate/support": "^5.5||^6.0||^7.0||^8.0|^9.0"
+        "laravel/framework": "^5.5||^6.0||^7.0||^8.0|^9.0",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.2",
+        "vimeo/psalm": "^4.3 || ^5.0",
+        "phpunit/phpunit": "^9.0",
+        "orchestra/testbench-core": "^7.0"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Valorin\\Pwned\\ServiceProvider"
+                "AssistedMindfulness\\Pwned\\PwnedServiceProvider"
             ]
         }
     }
