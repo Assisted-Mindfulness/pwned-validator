@@ -61,12 +61,11 @@ class PwnedRule implements Rule
     private function queryApi($prefix): Collection
     {
         $response = Http::withHeaders(['Add-Padding' => 'true'])
-            ->get('https://api.pwnedpasswords.com/range/' . $prefix);
+            ->get('https://api.pwnedpasswords.com/range/'.$prefix);
 
         if ($response->failed()) {
             return collect();
         }
-
 
         return Str::of($response->body())
             ->trim()
@@ -89,6 +88,6 @@ class PwnedRule implements Rule
      */
     private function query($prefix): Collection
     {
-        return Cache::remember('pwned:' . $prefix, now()->addWeek(), fn() => $this->queryApi($prefix));
+        return Cache::remember('pwned:'.$prefix, now()->addWeek(), fn () => $this->queryApi($prefix));
     }
 }
