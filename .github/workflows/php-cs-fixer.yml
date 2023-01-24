@@ -40,17 +40,6 @@ jobs:
       - name: Run Pint
         run: vendor/bin/pint
 
-      - name: Setup Node 🔧
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install Dependencies 🔧
-        run: npm install
-
-      - name: Run Write
-        run: npx prettier --write ./resources
-
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
