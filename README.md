@@ -2,11 +2,10 @@
 
 [![Tests](https://github.com/Assisted-Mindfulness/pwned-validator/actions/workflows/phpunit.yaml/badge.svg)](https://github.com/Assisted-Mindfulness/pwned-validator/actions/workflows/phpunit.yaml)
 
-The Pwned Password validator checks the user's submitted password (in a registration or password change form) with the awesome 
-[HIBP Pwned Passwords](https://haveibeenpwned.com/Passwords) service to see if it is a known _pwned password_.
-If the password has been pwned, it will fail validation, preventing the user from using that password in your app.
+Introducing the Pwned Password validator - a simple and effective tool for ensuring the security of your users' passwords. This package checks the user's submitted password (during registration or password change) against the [HIBP Pwned Passwords](https://haveibeenpwned.com/Passwords)  database, which contains over half a billion real-world passwords that have been exposed in data breaches.
 
-> Pwned Passwords are half a billion real world passwords previously exposed in data breaches. This exposure makes them unsuitable for ongoing use as they're at much greater risk of being used to take over other accounts.
+If a password is found to be pwned, it will fail validation and the user will be prevented from using it in your app. This helps to protect your users from potential security breaches and ensures that they are using strong, unique passwords. With the Pwned Password validator, you can have peace of mind knowing that your users' data is secure. Try it out today and see the difference it makes in the security of your app.
+
 
 
 ## Installation
