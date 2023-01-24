@@ -1,5 +1,7 @@
 # Pwned Passwords Validator for Laravel
 
+[![Tests](https://github.com/Assisted-Mindfulness/pwned-validator/actions/workflows/phpunit.yaml/badge.svg)](https://github.com/Assisted-Mindfulness/pwned-validator/actions/workflows/phpunit.yaml)
+
 The Pwned Password validator checks the user's submitted password (in a registration or password change form) with the awesome 
 [HIBP Pwned Passwords](https://haveibeenpwned.com/Passwords) service to see if it is a known _pwned password_.
 If the password has been pwned, it will fail validation, preventing the user from using that password in your app.
