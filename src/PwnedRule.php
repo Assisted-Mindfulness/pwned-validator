@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 
 class PwnedRule implements Rule
 {
-    /** @var int */
     private int $minimum;
 
     /**
@@ -53,11 +52,6 @@ class PwnedRule implements Rule
         ];
     }
 
-    /**
-     * @param $prefix
-     *
-     * @return \Illuminate\Support\Collection
-     */
     private function queryApi($prefix): Collection
     {
         $response = Http::withHeaders(['Add-Padding' => 'true'])
@@ -81,10 +75,6 @@ class PwnedRule implements Rule
 
     /**
      * Cache results for a week, to avoid constant API calls for identical prefixes
-     *
-     * @param $prefix
-     *
-     * @return \Illuminate\Support\Collection
      */
     private function query($prefix): Collection
     {
