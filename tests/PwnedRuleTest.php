@@ -48,7 +48,7 @@ class PwnedRuleTest extends TestCase
         $this->assertFalse($this->rule->passes('test', $password));
     }
 
-    public static function complexPasswords(): array
+    public function complexPasswords(): array
     {
         return [
             ['B#xhhg$OmH5jG|huZV4n'],
@@ -60,7 +60,7 @@ class PwnedRuleTest extends TestCase
         ];
     }
 
-    public static function easyPasswords()
+    public function easyPasswords()
     {
         return [
             ['123456'],

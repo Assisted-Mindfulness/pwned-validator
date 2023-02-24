@@ -45,7 +45,6 @@
       "on_multiline": "ignore"
     },
     "trim_array_spaces": true,
-    "single_trait_insert_per_statement": false,
-    "no_superfluous_phpdoc_tags": false
+    "single_trait_insert_per_statement": false
   }
 }

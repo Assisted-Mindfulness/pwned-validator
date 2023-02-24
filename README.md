@@ -13,7 +13,7 @@ If a password is found to be pwned, it will fail validation and the user will be
 Install the package using Composer:
 
 ```bash
-composer require assisted-mindfulness/pwned-validator
+composer require assisted-mindfulness/pwned-validator/pwned-validator
 ```
 
 Add the validation message to your validation lang file  `lang/en/validation.php` :
