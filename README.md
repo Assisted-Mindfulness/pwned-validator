@@ -34,8 +34,8 @@ After installation, the `pwned` validator will be available for use directly in 
 
 ```php
 return Validator::make($data, [
-    'name' => 'required|string|max:255',
-    'email' => 'required|string|email|max:255|unique:users',
+    'name'     => 'required|string|max:255',
+    'email'    => 'required|string|email|max:255|unique:users',
     'password' => 'required|string|min:6|pwned|confirmed',
 ]);
 ```
@@ -47,8 +47,8 @@ instead of the `pwned` alias if you prefer:
 
 ```php
 return Validator::make($data, [
-    'name' => 'required|string|max:255',
-    'email' => 'required|string|email|max:255|unique:users',
+    'name'     => 'required|string|max:255',
+    'email'    => 'required|string|email|max:255|unique:users',
     'password' => ['required', 'string', 'min:6', new \AssistedMindfulness\Pwned\PwnedRule, 'confirmed'],
 ]);
 ```
